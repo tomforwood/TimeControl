@@ -1,4 +1,4 @@
-package org.forwoods.timecontrol.timecontrolapi;
+package org.forwoods.timecontrol;
 
 public class DefaultSleepFactory implements SleepFactory {
 

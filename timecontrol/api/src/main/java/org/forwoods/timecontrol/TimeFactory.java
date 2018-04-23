@@ -1,10 +1,10 @@
-package org.forwoods.timecontrol.timecontrolapi;
+package org.forwoods.timecontrol;
 
 import java.time.Clock;
 
 public class TimeFactory {
 
-	private static Clock clock;
+	private static Clock clock = Clock.systemDefaultZone();
 	private static SleepFactory sleepFactory = new DefaultSleepFactory();
 
 	public static void sleep(long millis) throws InterruptedException {
@@ -21,6 +21,10 @@ public class TimeFactory {
 	
 	public static void setSleepFactory(SleepFactory sleepFactory) {
 		TimeFactory.sleepFactory = sleepFactory;
+	}
+
+	public static SleepFactory getSleepFactory() {
+		return sleepFactory;
 	}
 
 }

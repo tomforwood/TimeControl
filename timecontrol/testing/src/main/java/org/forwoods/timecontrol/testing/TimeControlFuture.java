@@ -1,5 +1,6 @@
 package org.forwoods.timecontrol.testing;
 
+import java.lang.Thread.State;
 import java.time.Instant;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
@@ -67,12 +68,25 @@ public class TimeControlFuture<V> implements Comparable<TimeControlFuture<V>>,Li
 	}
 	
 	protected boolean isBlockedOrDone() {
+		//TODO
 		if (isDone) return true;
 		else  {
 			ThreadGroup group = executingThread.getThreadGroup();
 			Thread[] threads = new Thread[1000];
-			int count 
-			for (Thread t:group.enumerate(list))
+			//int count 
+			//for (Thread t:group.enumerate(list))
+			State s = executingThread.getState();
+			switch (s) {
+			case BLOCKED:
+			case TIMED_WAITING:
+			case TERMINATED:
+			case WAITING:
+				return true;
+			case NEW:
+			case RUNNABLE:
+			default:
+				return false;
+			}
 		}
 	}
 

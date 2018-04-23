@@ -1,4 +1,4 @@
-package org.forwoods.timecontrol.timecontrolapi;
+package org.forwoods.timecontrol;
 
 public interface SleepFactory {
 

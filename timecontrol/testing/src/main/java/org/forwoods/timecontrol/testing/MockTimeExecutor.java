@@ -1,6 +1,7 @@
 package org.forwoods.timecontrol.testing;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.LinkedTransferQueue;
 import java.util.concurrent.TransferQueue;
 
 /**
@@ -46,6 +47,10 @@ public class MockTimeExecutor {
 	private class TaskRunner implements Runnable {
 		TransferQueue<TimeControlFuture<?>> taskTransfer;
 		boolean running = true;
+		
+		public TaskRunner() {
+			taskTransfer = new LinkedTransferQueue<>();
+		}
 
 		@Override
 		public void run() {

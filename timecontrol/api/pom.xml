@@ -10,4 +10,5 @@
 	<name>Time Contol api methods</name>
 	<description>Dependency less api to be used in production code. For testing it can be configured to use test time based classes</description>
 
+	<groupId>org.forwoods.timecontrol</groupId>
 </project>
