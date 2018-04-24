@@ -5,10 +5,10 @@ import java.time.Clock;
 public class TimeFactory {
 
 	private static Clock clock = Clock.systemDefaultZone();
-	private static SleepFactory sleepFactory = new DefaultSleepFactory();
+	private static Sleeper sleeper = new DefaultSleepFactory();
 
 	public static void sleep(long millis) throws InterruptedException {
-		sleepFactory.sleep(millis);
+		sleeper.sleep(millis);
 	}
 	
 	public static Clock getClock() {
@@ -19,12 +19,12 @@ public class TimeFactory {
 		TimeFactory.clock = clock;
 	}
 	
-	public static void setSleepFactory(SleepFactory sleepFactory) {
-		TimeFactory.sleepFactory = sleepFactory;
+	public static void setSleeper(Sleeper sleeper) {
+		TimeFactory.sleeper = sleeper;
 	}
 
-	public static SleepFactory getSleepFactory() {
-		return sleepFactory;
+	public static Sleeper getSleeper() {
+		return sleeper;
 	}
 
 }

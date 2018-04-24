@@ -23,12 +23,12 @@ public class MockClock extends Clock {
 
 	public static void mockTime(Instant time) {
 		TimeFactory.setClock(new MockClock(time));
-		TimeFactory.setSleepFactory(new MockSleepFactory());
+		TimeFactory.setSleeper(new MockSleepFactory());
 	}
 	
 	public static void mockTime() {
 		TimeFactory.setClock(new MockClock());
-		TimeFactory.setSleepFactory(new MockSleepFactory());
+		TimeFactory.setSleeper(new MockSleepFactory());
 	}
 	
 	private Instant now;

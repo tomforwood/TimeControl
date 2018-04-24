@@ -28,7 +28,7 @@ public class TestMockTime {
 	public void setUp() throws Exception {
 		MockClock.mockTime();
 		mockClock = (MockClock) TimeFactory.getClock();
-		mockSleep = ((MockSleepFactory)TimeFactory.getSleepFactory());
+		mockSleep = ((MockSleepFactory)TimeFactory.getSleeper());
 		hello = new HelloWorld();
 	}
 	

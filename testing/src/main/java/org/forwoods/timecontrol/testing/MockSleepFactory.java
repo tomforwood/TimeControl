@@ -4,10 +4,10 @@ import java.time.Instant;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-import org.forwoods.timecontrol.SleepFactory;
+import org.forwoods.timecontrol.Sleeper;
 import org.forwoods.timecontrol.TimeFactory;
 
-public class MockSleepFactory implements SleepFactory {
+public class MockSleepFactory implements Sleeper {
 
 	private boolean fastTime = false;
 	
